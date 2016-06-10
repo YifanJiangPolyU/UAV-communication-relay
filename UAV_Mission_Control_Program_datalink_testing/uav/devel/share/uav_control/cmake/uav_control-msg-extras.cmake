@@ -1,0 +1,2 @@
+set(uav_control_MESSAGE_FILES "/home/yifan/Desktop/FYP_Material/FYP_Program/UAV_Mission_Control_Program_testing_datalink/uav/src/uav_control/msg/DFrame.msg;/home/yifan/Desktop/FYP_Material/FYP_Program/UAV_Mission_Control_Program_testing_datalink/uav/src/uav_control/msg/channel_stat.msg")
+set(uav_control_SERVICE_FILES "/home/yifan/Desktop/FYP_Material/FYP_Program/UAV_Mission_Control_Program_testing_datalink/uav/src/uav_control/srv/datalink_send.srv")

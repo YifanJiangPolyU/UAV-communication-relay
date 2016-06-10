@@ -1,0 +1,48 @@
+##
+## msg_id defines the meaning of the content of a datalink frame message
+## full msg_id list and their meanings are listed below.
+##
+
+id	meaning
+---------------------
+00	heart beat
+01	emergency msg
+02	command
+03	command ack
+04	general string
+
+10      img request
+11      img reply
+
+29      state
+30	attitude
+33	global pos int
+74	VFR hud
+
+75	battery
+
+
+##
+## cmd_id defines the meaning of a command ( a command msg has msg_id = 02 ）
+## full cmd_id list and their meanings are listed below.
+##
+
+id	meaning		description
+----------------------------------
+00	takeoff		 
+01	land		 
+02	goto		 todo
+03	mission_start	 todo
+04	mission_abort	 todo
+05	rtl		 return to launch (home)
+06	arm/disarm
+07	setmode
+
+08      gethome          get current home location  (not supported yet)
+09      sethome          set current location as home  (not supported yet)
+10      turn             set yaw angle
+11      alt              todo
+12      go               move forward along current heading
+
+
+
