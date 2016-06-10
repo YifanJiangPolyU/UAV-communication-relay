@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "uav_control")
+set(uav_control_MAINTAINER "yifan <yifan@todo.todo>")
+set(uav_control_DEPRECATED "")
+set(uav_control_VERSION "0.0.0")
+set(uav_control_BUILD_DEPENDS "message_generation")
+set(uav_control_RUN_DEPENDS "message_runtime")
+set(uav_control_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/install
+
+Name: uav_control
+Description: Description of uav_control
+Version: 0.0.0
+Cflags: -I/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/install/include
+Libs: -L/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/install/lib 
+Requires: message_runtime

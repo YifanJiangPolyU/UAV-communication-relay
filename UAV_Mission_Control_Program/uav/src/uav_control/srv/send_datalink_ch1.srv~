@@ -1,0 +1,10 @@
+# service sending out a datalink frame from specified channel
+
+uint8 channel
+uint8 source_id
+uint8 target_id
+uint8 route
+uint16 len
+uint8[1024] payload
+---
+uint8 err

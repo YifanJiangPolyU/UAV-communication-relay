@@ -1,0 +1,10 @@
+
+<launch>
+
+  <group ns="uav_launch">
+    <node pkg="uav_control" name="datalink_ch1">
+    <node pkg="uav_control" name="datalink_ch2">
+    <node pkg="uav_control" name="datalink_send">
+  </group>
+
+</launch>

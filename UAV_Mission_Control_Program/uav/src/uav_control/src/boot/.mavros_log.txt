@@ -1,0 +1,224 @@
+... logging to /home/ubuntu/.ros/log/3a9db15c-e160-11e5-af1a-b827ebbcca09/roslaunch-ubuntu-10057.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/opt/ros/jade/share/mavros/launch/px4.launch
+[1mstarted roslaunch server http://ubuntu:60568/[0m
+
+SUMMARY
+========
+
+CLEAR PARAMETERS
+ * /mavros/
+
+PARAMETERS
+ * /mavros/cmd/use_comp_id_system_control: False
+ * /mavros/conn/heartbeat_rate: 1.0
+ * /mavros/conn/system_time_rate: 1.0
+ * /mavros/conn/timeout: 10.0
+ * /mavros/conn/timesync_rate: 10.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/frame_id: hrlv_ez4_sonar
+ * /mavros/distance_sensor/hrlv_ez4_pub/id: 0
+ * /mavros/distance_sensor/hrlv_ez4_pub/orientation: ROLL_180
+ * /mavros/distance_sensor/hrlv_ez4_pub/send_tf: True
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/laser_1_sub/id: 3
+ * /mavros/distance_sensor/laser_1_sub/orientation: ROLL_180
+ * /mavros/distance_sensor/laser_1_sub/subscriber: True
+ * /mavros/distance_sensor/lidarlite_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/frame_id: lidarlite_laser
+ * /mavros/distance_sensor/lidarlite_pub/id: 1
+ * /mavros/distance_sensor/lidarlite_pub/orientation: ROLL_180
+ * /mavros/distance_sensor/lidarlite_pub/send_tf: True
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/sonar_1_sub/id: 2
+ * /mavros/distance_sensor/sonar_1_sub/orientation: ROLL_180
+ * /mavros/distance_sensor/sonar_1_sub/subscriber: True
+ * /mavros/fcu_url: /dev/ttyUSB1:57600
+ * /mavros/gcs_url: 
+ * /mavros/global_position/frame_id: fcu
+ * /mavros/global_position/rot_covariance: 99999.0
+ * /mavros/global_position/tf/child_frame_id: fcu_utm
+ * /mavros/global_position/tf/frame_id: local_origin
+ * /mavros/global_position/tf/send: False
+ * /mavros/image/frame_id: px4flow
+ * /mavros/imu/angular_velocity_stdev: 0.000349065850399
+ * /mavros/imu/frame_id: fcu
+ * /mavros/imu/linear_acceleration_stdev: 0.0003
+ * /mavros/imu/magnetic_stdev: 0.0
+ * /mavros/imu/orientation_stdev: 1.0
+ * /mavros/local_position/frame_id: fcu
+ * /mavros/local_position/tf/child_frame_id: fcu
+ * /mavros/local_position/tf/frame_id: local_origin
+ * /mavros/local_position/tf/send: False
+ * /mavros/mission/pull_after_gcs: True
+ * /mavros/mocap/use_pose: True
+ * /mavros/mocap/use_tf: False
+ * /mavros/plugin_blacklist: ['safety_area', '...
+ * /mavros/plugin_whitelist: []
+ * /mavros/px4flow/frame_id: px4flow
+ * /mavros/px4flow/ranger_fov: 0.0
+ * /mavros/px4flow/ranger_max_range: 5.0
+ * /mavros/px4flow/ranger_min_range: 0.3
+ * /mavros/safety_area/p1/x: 1.0
+ * /mavros/safety_area/p1/y: 1.0
+ * /mavros/safety_area/p1/z: 1.0
+ * /mavros/safety_area/p2/x: -1.0
+ * /mavros/safety_area/p2/y: -1.0
+ * /mavros/safety_area/p2/z: -1.0
+ * /mavros/setpoint_accel/send_force: False
+ * /mavros/setpoint_attitude/reverse_throttle: False
+ * /mavros/setpoint_attitude/tf/child_frame_id: attitude
+ * /mavros/setpoint_attitude/tf/frame_id: local_origin
+ * /mavros/setpoint_attitude/tf/listen: False
+ * /mavros/setpoint_attitude/tf/rate_limit: 10.0
+ * /mavros/setpoint_position/tf/child_frame_id: setpoint
+ * /mavros/setpoint_position/tf/frame_id: local_origin
+ * /mavros/setpoint_position/tf/listen: False
+ * /mavros/setpoint_position/tf/rate_limit: 50.0
+ * /mavros/startup_px4_usb_quirk: True
+ * /mavros/sys/disable_diag: False
+ * /mavros/sys/min_voltage: 10.0
+ * /mavros/target_component_id: 1
+ * /mavros/target_system_id: 1
+ * /mavros/tdr_radio/low_rssi: 40
+ * /mavros/time/time_ref_source: fcu
+ * /mavros/time/timesync_avg_alpha: 0.6
+ * /mavros/vibration/frame_id: vibration
+ * /mavros/vision_pose/tf/child_frame_id: vision
+ * /mavros/vision_pose/tf/frame_id: local_origin
+ * /mavros/vision_pos[31m[ERROR] [1457023927.324762402]: FCU: APM:Copter V3.3.3 (acf2e10c)[0m
+[31m[ERROR] [1457023927.325498131]: FCU: PX4: 34e1d543 NuttX: 7c5ef883[0m
+[31m[ERROR] [1457023927.326177870]: FCU: Frame: QUAD[0m
+[31m[ERROR] [1457023927.326535527]: FCU: PX4v2 003A0032 3233470C 35343439[0m
+[0m[ INFO] [1457023914.937942250]: FCU URL: /dev/ttyUSB1:57600[0m
+[0m[ INFO] [1457023914.940377563]: serial0: device: /dev/ttyUSB1 @ 57600 bps[0m
+[0m[ INFO] [1457023914.946694229]: GCS bridge disabled[0m
+[0m[ INFO] [1457023915.423684542]: Plugin 3dr_radio loaded and initialized[0m
+[0m[ INFO] [1457023915.457461469]: Plugin actuator_control loaded and initialized[0m
+[0m[ INFO] [1457023915.508949177]: Plugin command loaded and initialized[0m
+[0m[ INFO] [1457023915.581079698]: Plugin ftp loaded and initialized[0m
+[0m[ INFO] [1457023915.663908656]: Plugin global_position loaded and initialized[0m
+[0m[ INFO] [1457023915.740204281]: Plugin imu_pub loaded and initialized[0m
+[0m[ INFO] [1457023915.788972198]: Plugin local_position loaded and initialized[0m
+[0m[ INFO] [1457023915.795419646]: Plugin manual_control loaded and initialized[0m
+[0m[ INFO] [1457023915.820572875]: Plugin param loaded and initialized[0m
+[0m[ INFO] [1457023915.862607198]: Plugin rc_io loaded and initialized[0m
+[0m[ INFO] [1457023915.864255531]: Plugin safety_area blacklisted[0m
+[0m[ INFO] [1457023915.902913552]: Plugin setpoint_accel loaded and initialized[0m
+[0m[ INFO] [1457023916.031241781]: Plugin setpoint_attitude loaded and initialized[0m
+[0m[ INFO] [1457023916.095411416]: Plugin setpoint_position loaded and initialized[0m
+[0m[ INFO] [1457023916.196346000]: Plugin setpoint_raw loaded and initialized[0m
+[0m[ INFO] [1457023916.224671416]: Plugin setpoint_velocity loaded and initialized[0m
+[0m[ INFO] [1457023916.287310114]: Plugin sys_status loaded and initialized[0m
+[0m[ INFO] [1457023916.320767458]: Plugin sys_time loaded and initialized[0m
+[0m[ INFO] [1457023916.333347979]: Plugin vfr_hud loaded and initialized[0m
+[0m[ INFO] [1457023916.373570531]: Plugin waypoint loaded and initialized[0m
+[0m[ INFO] [1457023916.373934020]: Autostarting mavlink via USB on PX4[0m
+[0m[ INFO] [1457023916.374715843]: Built-in SIMD instructions: None[0m
+[0m[ INFO] [1457023916.374901729]: Built-in MAVLink dialect: ardupilotmega[0m
+[0m[ INFO] [1457023916.375078604]: MAVROS started. MY ID [1, 240], TARGET ID [1, 1][0m
+[33m[ WARN] [1457023916.619244854]: IMU: linear acceleration on RAW_IMU known on APM only.[0m
+[33m[ WARN] [1457023916.619535739]: IMU: ~imu/data_raw stores unscaled raw acceleration report.[0m
+[33m[ WARN] [1457023916.620570843]: GP: No GPS fix[0m
+[33m[ WARN] [1457023916.878790635]: TM: Wrong FCU time.[0m
+[0m[ INFO] [1457023917.273675947]: CON: Got HEARTBEAT, connected.[0m
+[0m[ INFO] [1457023918.311807718]: VER: 1.1: Capabilities 0x0000000000000b83[0m
+[0m[ INFO] [1457023918.312319749]: VER: 1.1: Flight software:     030303ff (acf2e10c34e1d5437c5ef883???qY)[0m
+[0m[ INFO] [1457023918.312656572]: VER: 1.1: Middleware software: 00000000 (34e1d5437c5ef883???qY)[0m
+[0m[ INFO] [1457023918.312868343]: VER: 1.1: OS software:         00000000 (7c5ef883???qY)[0m
+[0m[ INFO] [1457023918.313048291]: VER: 1.1: Board hardware:      00000000[0m
+[0m[ INFO] [1457023918.313222770]: VER: 1.1: VID/PID: 0000:0000[0m
+[0m[ INFO] [1457023918.313437874]: VER: 1.1: UID: 0000000000000000[0m
+[33m[ WARN] [1457023918.313792041]: CMD: Unexpected command 520, result 0[0m
+[0m[ INFO] [1457023932.284390160]: WP: mission received[0m
+[0m[ INFO] [1457023937.522073960]: PR: parameters list received[0m
+[33m[ WARN] [1457023946.915473644]: GP: No GPS fix[0m
+[33m[ WARN] [1457023977.013404101]: GP: No GPS fix[0m
+[33m[ WARN] [1457023977.274106549]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024007.117784090]: GP: No GPS fix[0m
+[33m[ WARN] [1457024037.217247516]: GP: No GPS fix[0m
+[33m[ WARN] [1457024037.476726683]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024067.318949900]: GP: No GPS fix[0m
+[33m[ WARN] [1457024097.422101816]: GP: No GPS fix[0m
+[33m[ WARN] [1457024097.679191503]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024127.521449669]: GP: No GPS fix[0m
+[33m[ WARN] [1457024157.622150543]: GP: No GPS fix[0m
+[33m[ WARN] [1457024157.882710960]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024187.721772615]: GP: No GPS fix[0m
+[33m[ WARN] [1457024217.820125780]: GP: No GPS fix[0m
+[33m[ WARN] [1457024218.080402447]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024247.927907592]: GP: No GPS fix[0m
+[33m[ WARN] [1457024278.030947528]: GP: No GPS fix[0m
+[33m[ WARN] [1457024278.291683882]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024308.128017309]: GP: No GPS fix[0m
+[33m[ WARN] [1457024338.227444745]: GP: No GPS fix[0m
+[33m[ WARN] [1457024338.487794797]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024368.325344265]: GP: No GPS fix[0m
+[33m[ WARN] [1457024398.428496701]: GP: No GPS fix[0m
+[33m[ WARN] [1457024398.689192691]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024428.534090179]: GP: No GPS fix[0m
+[33m[ WARN] [1457024458.631102355]: GP: No GPS fix[0m
+[33m[ WARN] [1457024458.891765064]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024488.734138542]: GP: No GPS fix[0m
+[33m[ WARN] [1457024518.831155197]: GP: No GPS fix[0m
+[33m[ WARN] [1457024519.091784363]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024548.934422737]: GP: No GPS fix[0m
+[33m[ WARN] [1457024579.037359341]: GP: No GPS fix[0m
+[33m[ WARN] [1457024579.296963299]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024609.141881673]: GP: No GPS fix[0m
+[33m[ WARN] [1457024639.244122547]: GP: No GPS fix[0m
+[33m[ WARN] [1457024639.504844109]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024669.341202952]: GP: No GPS fix[0m
+[33m[ WARN] [1457024699.441815753]: GP: No GPS fix[0m
+[33m[ WARN] [1457024699.702491899]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024729.533788554]: GP: No GPS fix[0m
+[33m[ WARN] [1457024759.644541668]: GP: No GPS fix[0m
+[33m[ WARN] [1457024759.901453282]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024789.740188166]: GP: No GPS fix[0m
+[33m[ WARN] [1457024819.838318624]: GP: No GPS fix[0m
+[33m[ WARN] [1457024820.099194926]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024849.934346008]: GP: No GPS fix[0m
+[33m[ WARN] [1457024880.039931049]: GP: No GPS fix[0m
+[33m[ WARN] [1457024880.299354278]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024910.140515516]: GP: No GPS fix[0m
+[33m[ WARN] [1457024940.240421338]: GP: No GPS fix[0m
+[33m[ WARN] [1457024940.500860661]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457024970.332296327]: GP: No GPS fix[0m
+[33m[ WARN] [1457025000.431908190]: GP: No GPS fix[0m
+[33m[ WARN] [1457025000.692339128]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025030.531312970]: GP: No GPS fix[0m
+[33m[ WARN] [1457025060.632003844]: GP: No GPS fix[0m
+[33m[ WARN] [1457025060.892581240]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025090.736618468]: GP: No GPS fix[0m
+[33m[ WARN] [1457025120.822448457]: GP: No GPS fix[0m
+[33m[ WARN] [1457025121.081770488]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025150.918281050]: GP: No GPS fix[0m
+[33m[ WARN] [1457025181.024031715]: GP: No GPS fix[0m
+[33m[ WARN] [1457025181.284632548]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025211.123370610]: GP: No GPS fix[0m
+[33m[ WARN] [1457025241.227949296]: GP: No GPS fix[0m
+[33m[ WARN] [1457025241.488607473]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025271.331256420]: GP: No GPS fix[0m
+[33m[ WARN] [1457025301.429441982]: GP: No GPS fix[0m
+[33m[ WARN] [1457025301.690105627]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025331.531548585]: GP: No GPS fix[0m
+[33m[ WARN] [1457025361.636085240]: GP: No GPS fix[0m
+[33m[ WARN] [1457025361.895301594]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025391.731815749]: GP: No GPS fix[0m
+[33m[ WARN] [1457025421.837413915]: GP: No GPS fix[0m
+[33m[ WARN] [1457025422.093300842]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025451.939795258]: GP: No GPS fix[0m
+[33m[ WARN] [1457025482.034971496]: GP: No GPS fix[0m
+[33m[ WARN] [1457025482.295745611]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025512.134646380]: GP: No GPS fix[0m
+[33m[ WARN] [1457025542.231896525]: GP: No GPS fix[0m
+[33m[ WARN] [1457025542.492538921]: TM: Wrong FCU time.[0m
+[33m[ WARN] [1457025572.339284587]: GP: No GPS fix[0m
+[33m[ WARN] [1457025602.442486346]: GP: No GPS fix[0m
+[33m[ WARN] [1457025602.701757492]: T
