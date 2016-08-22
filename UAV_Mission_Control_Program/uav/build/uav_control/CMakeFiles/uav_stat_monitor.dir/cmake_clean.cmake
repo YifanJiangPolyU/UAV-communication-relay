@@ -1,10 +1,10 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/uav_stat_monitor.dir/src/uav_stat_monitor.cpp.o"
-  "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel/lib/uav_control/uav_stat_monitor.pdb"
-  "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel/lib/uav_control/uav_stat_monitor"
+  "/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel/lib/uav_control/uav_stat_monitor.pdb"
+  "/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel/lib/uav_control/uav_stat_monitor"
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang CXX)
-  INCLUDE(CMakeFiles/uav_stat_monitor.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang CXX)
+  include(CMakeFiles/uav_stat_monitor.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

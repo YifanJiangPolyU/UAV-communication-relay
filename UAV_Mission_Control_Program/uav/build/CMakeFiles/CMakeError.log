@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp
+Change Dir: /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec1772573228/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1772573228.dir/build.make CMakeFiles/cmTryCompileExec1772573228.dir/build
-make[1]: Entering directory `/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec1772573228.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1772573228.dir/CheckSymbolExists.c.o   -c "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c"
-Linking C executable cmTryCompileExec1772573228
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1772573228.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1772573228.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1772573228 -rdynamic 
-CMakeFiles/cmTryCompileExec1772573228.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1813904406/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1813904406.dir/build.make CMakeFiles/cmTryCompileExec1813904406.dir/build
+make[1]: Entering directory `/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1813904406.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1813904406.dir/CheckSymbolExists.c.o   -c /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1813904406
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1813904406.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1813904406.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1813904406 -rdynamic 
+CMakeFiles/cmTryCompileExec1813904406.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTryCompileExec1772573228] Error 1
-make[1]: Leaving directory `/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec1772573228/fast] Error 2
+make[1]: *** [cmTryCompileExec1813904406] Error 1
+make[1]: Leaving directory `/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1813904406/fast] Error 2
 
-File /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,21 +33,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp
+Change Dir: /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2268749325/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2268749325.dir/build.make CMakeFiles/cmTryCompileExec2268749325.dir/build
-make[1]: Entering directory `/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp/CMakeFiles" 1
-Building C object CMakeFiles/cmTryCompileExec2268749325.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2268749325.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2268749325
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2268749325.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2268749325.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2268749325 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2358049268/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2358049268.dir/build.make CMakeFiles/cmTryCompileExec2358049268.dir/build
+make[1]: Entering directory `/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2358049268.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2358049268.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2358049268
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2358049268.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2358049268.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2358049268 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTryCompileExec2268749325] Error 1
-make[1]: Leaving directory `/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec2268749325/fast] Error 2
+make[1]: *** [cmTryCompileExec2358049268] Error 1
+make[1]: Leaving directory `/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2358049268/fast] Error 2
 
 

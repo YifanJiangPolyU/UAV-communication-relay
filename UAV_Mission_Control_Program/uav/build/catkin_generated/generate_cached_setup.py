@@ -19,9 +19,9 @@ except ImportError:
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel/env.sh')
+code = generate_environment_script('/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel/env.sh')
 
-output_filename = '/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/build/catkin_generated/setup_cached.sh'
+output_filename = '/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/build/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     #print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

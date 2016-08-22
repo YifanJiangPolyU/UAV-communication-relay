@@ -67,14 +67,14 @@ set(uav_control_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(uav_control_SOURCE_PREFIX /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/src/uav_control)
-  set(uav_control_DEVEL_PREFIX /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel)
+  set(uav_control_SOURCE_PREFIX /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/src/uav_control)
+  set(uav_control_DEVEL_PREFIX /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel)
   set(uav_control_INSTALL_PREFIX "")
   set(uav_control_PREFIX ${uav_control_DEVEL_PREFIX})
 else()
   set(uav_control_SOURCE_PREFIX "")
   set(uav_control_DEVEL_PREFIX "")
-  set(uav_control_INSTALL_PREFIX /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/install)
+  set(uav_control_INSTALL_PREFIX /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/install)
   set(uav_control_PREFIX ${uav_control_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(uav_control_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel/include " STREQUAL " ")
+if(NOT "/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel/include " STREQUAL " ")
   set(uav_control_INCLUDE_DIRS "")
-  set(_include_dirs "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel/include")
+  set(_include_dirs "/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/de
         message(FATAL_ERROR "Project 'uav_control' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'yifan <yifan@todo.todo>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'uav_control' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/src/uav_control/${idir}'.  Ask the maintainer 'yifan <yifan@todo.todo>' to fix it.")
+      message(FATAL_ERROR "Project 'uav_control' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/src/uav_control/${idir}'.  Ask the maintainer 'yifan <yifan@todo.todo>' to fix it.")
     endif()
     _list_append_unique(uav_control_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/devel/lib;/opt/ros/jade/lib)
+    foreach(path /home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel/lib;/opt/ros/jade/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

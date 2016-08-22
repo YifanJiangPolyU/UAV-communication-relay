@@ -8,7 +8,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/yifan/Desktop/FYP Material/FYP Program/Raspberry_Pi_Program/uav/install}
+: ${_CATKIN_SETUP_DIR:=/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/install}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 
