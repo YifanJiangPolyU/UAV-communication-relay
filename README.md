@@ -5,6 +5,13 @@ This is a set of ROS nodes and programs that implements a radio communication re
   2. mavros
   3. mavlink
 
+## Structure
+  UAV_Mission_Control_Program/boot: contains scripts to automatically boot the nodes
+  UAV_Mission_Control_Program/msg: contains ROS message definitions
+  UAV_Mission_Control_Program/srv: contains ROS service definitions
+  UAV_Mission_Control_Program/src: contains source code and header files
+  UAV_Mission_Control_Program/include: contains additional header files
+
 ## Installation
   1. System requirements: Ubuntu 14.04 or above
   2. Pull from git repository
