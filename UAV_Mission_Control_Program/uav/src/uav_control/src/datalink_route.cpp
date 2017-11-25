@@ -15,7 +15,10 @@
 #include "sysid.h"
 #include <uav_control/DFrame.h>
 #include <uav_control/datalink_send.h>
-
+#include <mavros_msgs/SetMode.h>
+#include <mavros_msgs/StreamRate.h>
+#include <mavros_msgs/VFR_HUD.h>
+#include <mavros_msgs/Mavlink.h>
 
 #include <uav_control/channel_stat.h>
 

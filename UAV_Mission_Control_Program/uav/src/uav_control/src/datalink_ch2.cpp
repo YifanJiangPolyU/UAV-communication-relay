@@ -8,17 +8,14 @@
 #include "string.h"
 #include "termios.h"
 #include "stdint.h"
-#include "time.h"
 
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "std_msgs/Int32.h"
 #include "sysid.h"
-#include "mavlink2.0/common/mavlink.h"
 #include <uav_control/DFrame.h>
 #include <uav_control/channel_stat.h>
 #include <uav_control/datalink_send.h>
-#include <mavros_msgs/Mavlink.h>
 
 
 
@@ -112,14 +109,6 @@ void * SerialBuffering(void * param);
 bool send(uav_control::datalink_send::Request  &req,
           uav_control::datalink_send::Response &res);
 
-
-/**
- * @brief trigger 3DR telemetry to report RSSI
- *        by sending a fake mavlink heartbeat msg
- */
-void rssi_trigger_callback(const mavros_msgs::Mavlink rmsg);
-
-
 int readFd;
 uav_control::channel_stat ch2_stat;
 ros::Publisher datalink_publisher;
@@ -190,12 +179,6 @@ int main(int argc, char **argv)
   pthread_t ch2_decoding_thread;
   pthread_create( &ch2_decoding_thread, NULL, &SerialBuffering, (void*)(NULL));
 
- /**
-   *  create a FAKE mavlink msg, to trigger 3DR telemetry's RSSI report system.
-   */
-	ros::Subscriber sub_mav = n.subscribe("/mavlink/from", 10, rssi_trigger_callback);
-
-
   /**
    * Main loop that reads and decodes datalink frames
    */
@@ -247,25 +230,10 @@ void * SerialBuffering(void * param)
 
    uint8_t sys_id = SYSID;
    uint8_t broadcast_id = BROADID;
+
    uav_control::DFrame _msg;
    uav_control::DFrame * msg;
    msg = &(_msg);
-
-   mavlink_message_t mavlink_msg;
-   mavlink_status_t mavlink_status;
-   mavlink_radio_status_t mav_radio_status;
-
-   // create a new file to record RSSI
-   // old data WILL BE REMOVED
-   FILE * pf_rssi;
-   pf_rssi = fopen("rssi_data_ch2.txt", "w");
-   fprintf(pf_rssi, "time, \trssi, \tremrssi, \tnoise, \tremnoise \n");
-
-   // create a new file to record Datalink Statistic
-   // old data WILL BE REMOVED
-   FILE * pf_rssi;
-   pf_stat = fopen("datalink_stat_ch2.txt", "w");
-   fprintf(pf_stat, "time, \ttotal msg, \terror msg \n");
 
    while(true){
     //try reading
@@ -274,31 +242,6 @@ void * SerialBuffering(void * param)
 	// successfully read data, start processing
 	for(j=0; j<len; j++){
 		tmp = buf[j];
-
-		// check for radio-injected RSSI mavlink msg
-		if(mavlink_parse_char(MAVLINK_COMM_0, tmp, &mavlink_msg, &mavlink_status)){
-			if(mavlink_msg.msgid == MAVLINK_MSG_ID_RADIO_STATUS){
-				// add code to record radio RSSI
-				mavlink_msg_radio_status_decode(&mavlink_msg, &mav_radio_status);
-
-				ROS_INFO("\t rssi: %d, remrssi: %d, noise: %d, remnoise: %d",
-					mav_radio_status.rssi ,
-					mav_radio_status.remrssi ,
-					mav_radio_status.noise ,
-					mav_radio_status.remnoise);
-
-				time_t time_now;	
-				std::time(&time_now);
-
-				fprintf(pf_rssi, "%d, \t%d, \t%d, \t%d, \t%d \n",
-						((long int) time_now),
-						mav_radio_status.rssi ,
-						mav_radio_status.remrssi ,
-						mav_radio_status.noise ,
-						mav_radio_status.remnoise );				
-			}
-		}
-
 		if(state == state_waiting){
 			if(tmp == starting_mark){
 				state = state_starting;
@@ -383,29 +326,14 @@ void * SerialBuffering(void * param)
 
 					/* update statistics */
 					ch2_stat.msg_received += 1;
-					if(ch2_stat.msg_received%15 == 0){
+					if(ch2_stat.msg_received%15 == 0)
 					  stat_publisher.publish(ch2_stat);
-
-					  time_t time_now;	
-					  std::time(&time_now);
-					  fprintf(pf_stat, "%d, \t%d, \t%d",
-						((long int) time_now),
-						ch2_stat.msg_received,
-						ch2_stat.msg_crc_error );
-					}
 				}
 				else{
 					/* if CRC failes, reject message */
 					ROS_WARN("CRC fail");
 					ch2_stat.msg_crc_error += 1;
 					  stat_publisher.publish(ch2_stat);
-
-					time_t time_now;	
-					std::time(&time_now);
-					fprintf(pf_stat, "%d, \t%d, \t%d",
-						((long int) time_now),
-						ch2_stat.msg_received,
-						ch2_stat.msg_crc_error );
 			 	}
 				state = state_waiting;
 			}
@@ -417,9 +345,6 @@ void * SerialBuffering(void * param)
       ROS_INFO("Read serial port timeout ...");
     }
    }
-
-   fclose(pf_rssi);
-   fclose(pf_stat);
 }
 
 
@@ -478,32 +403,6 @@ bool send(uav_control::datalink_send::Request  &req,
   return true;
 }
 
-
-/**
- *  @brief create a FAKE mavlink heartbeat msg, to trigger 3DR telemetry's RSSI report system.
- */
-void rssi_trigger_callback(const mavros_msgs::Mavlink rmsg)
-{
-	if(rmsg.msgid == 0){
-		mavlink_system_t mavlink_system;
-		mavlink_message_t msg;
-		uint8_t buf_fake[MAVLINK_MAX_PACKET_LEN];
-
-		mavlink_system.sysid = 16;  // these values help "verify_port_assignment.cpp" identify fake mavlink msg         
-		mavlink_system.compid = 16;     
-
-		// Pack & send a fake mavlink heartbeat message
-		mavlink_msg_heartbeat_pack(	mavlink_system.sysid, mavlink_system.compid, &msg, 
-						0, 0, 
-						0, 0, 0);
-
-		uint16_t len_fake = mavlink_msg_to_send_buffer(buf_fake, &msg);
-		int writeFd = readFd;
-		write(writeFd, buf_fake, len_fake);
-		
-		ROS_INFO("\t sending fake mavlink msg");
-	}
-}
 
 
 /**

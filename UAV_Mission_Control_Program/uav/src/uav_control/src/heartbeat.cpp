@@ -29,7 +29,7 @@ const uint8_t sysid = 0x03;
 
 int main(int argc, char **argv)
 {
-  
+
   ros::init(argc, argv, "heartbeat-server");
   ros::NodeHandle n;
 
