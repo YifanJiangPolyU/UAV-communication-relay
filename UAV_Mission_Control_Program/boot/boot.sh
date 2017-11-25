@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
-## automatic start-up script for UAV 
+## automatic start-up script for UAV
 ##
 
 UAV_NAME="son"  # name of UAV: mom or son
@@ -41,7 +41,7 @@ sleep 10
   if [ $UAV_NAME = $UAV_NAME_SON ]
   then
     PORT_NUM=2
-  else 
+  else
     if [ $MOM_BYPASS = "yes" ]
     then
       PORT_NUM=2
@@ -55,9 +55,9 @@ sleep 10
   echo "[`date`]  checking existence of serial ports ..." | tee -a $BOOT_LOG
   while [ 0 ]
   do
-    for port in $SERIAL_PORT_CANDIDATES 
+    for port in $SERIAL_PORT_CANDIDATES
     do
-      if [ -e "$port" ] 
+      if [ -e "$port" ]
       then
 
          echo $SERIAL_PORT_LIST | grep --quiet -c $port
@@ -70,7 +70,7 @@ sleep 10
          fi
       fi
     done
-   
+
     if [ `echo $SERIAL_PORT_LIST | wc -w` = $PORT_NUM ]
     then
       echo "[`date`]      have found enough serial ports" | tee -a $BOOT_LOG
@@ -105,7 +105,7 @@ sleep 10
         echo "[`date`]      verified PixHawk port: ${PORT_ARRAY[1]}" | tee -a $BOOT_LOG
         echo "[`date`]      verified datalink ch1 port: ${PORT_ARRAY[0]}" | tee -a $BOOT_LOG
         SERIAL_PORT_PX4=${PORT_ARRAY[1]}
-        SERIAL_PORT_TCH1=${PORT_ARRAY[0]}  
+        SERIAL_PORT_TCH1=${PORT_ARRAY[0]}
         break
       fi
 
@@ -237,7 +237,7 @@ sleep 10
   then
     screen -d -m -S $SCREEN_NODE ${PATH_TO_BOOT}/son_node_autostart.sh $PATH_TO_UAVPKG $SERIAL_PORT_TCH1
     sleep 2
-    
+
     screen -d -m -S screen_stat_monitor ${PATH_TO_BOOT}/uav_stat_monitor_autostart.sh $PATH_TO_UAVPKG
     sleep 2
 
@@ -263,6 +263,3 @@ sleep 10
 
 # end of start-up script
 echo "the end"
-
-
-  

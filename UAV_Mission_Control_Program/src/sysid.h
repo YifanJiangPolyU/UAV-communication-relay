@@ -14,7 +14,7 @@
 #define QUAD_ID 0x03  // UAV son
 
 /**
- *  
+ *
  */
 /*
 #define QUAD_TEST

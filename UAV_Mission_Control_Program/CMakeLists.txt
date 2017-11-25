@@ -4,8 +4,6 @@ project(uav_control)
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_generation)
 
-
-
 ## Custom messages
  add_message_files(
    DIRECTORY msg

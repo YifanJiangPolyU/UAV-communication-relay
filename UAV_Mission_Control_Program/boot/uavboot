@@ -1,8 +1,8 @@
 #!/bin/bash
-# /etc/init.d/uavboot_odroid
+# /etc/init.d/uavboot
 
 ### BEGIN INIT INFO
-# Provides:          uavboot_rpi
+# Provides:          uavboot
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     3 2 5 4
@@ -19,7 +19,7 @@ export USER HOME
 case "$1" in
  start)
   echo "Starting UAV controller"
-  su - $USER -c "/home/odroid/Desktop/yifan/src/uav_control/src/boot/boot_Odroid.sh"
+  su - $USER -c "/home/odroid/Desktop/yifan/src/uav_control/src/boot/boot.sh"
   ;;
 
  stop)
