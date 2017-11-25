@@ -1,11 +1,11 @@
 This is a set of ROS nodes and programs that implements a radio communication relay system for 2 UAVs.
 
-1. Dependencies
+## Dependencies
   1. ROS
   2. mavros
   3. mavlink
 
-2. Installation
+## Installation
   1. System requirements: Ubuntu 14.04 or above
   2. Pull from git repository
   3. Link UAV_Mission_Control_Program/ to your local catkin workspace
@@ -16,6 +16,6 @@ This is a set of ROS nodes and programs that implements a radio communication re
   8. Copy UAV_Mission_Control_Program/boot/uavboot to /etc/init.d, so you can start is using service
   9. Add the path to PATH_TO_BOOT/boot.sh to /etc/rc.local, so the system starts itself when booting
 
-3. Possible improvements
+## Possible improvements
   1. Possibility to replace boot.sh with roslaunch?
   2. Remove or at least centralize the use of hard-coded absolute paths.
