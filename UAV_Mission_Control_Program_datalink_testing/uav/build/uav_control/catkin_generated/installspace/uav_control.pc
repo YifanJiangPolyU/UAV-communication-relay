@@ -1,8 +1,0 @@
-prefix=/home/yifan/Desktop/FYP_Material/FYP_Program/UAV_Mission_Control_Program_testing_datalink/uav/install
-
-Name: uav_control
-Description: Description of uav_control
-Version: 0.0.0
-Cflags: -I/home/yifan/Desktop/FYP_Material/FYP_Program/UAV_Mission_Control_Program_testing_datalink/uav/install/include
-Libs: -L/home/yifan/Desktop/FYP_Material/FYP_Program/UAV_Mission_Control_Program_testing_datalink/uav/install/lib 
-Requires: message_runtime

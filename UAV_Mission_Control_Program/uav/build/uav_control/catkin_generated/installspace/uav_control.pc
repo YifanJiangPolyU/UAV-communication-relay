@@ -1,8 +1,0 @@
-prefix=/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/install
-
-Name: uav_control
-Description: Description of uav_control
-Version: 0.0.0
-Cflags: -I/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/install/include
-Libs: -L/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/install/lib 
-Requires: message_runtime

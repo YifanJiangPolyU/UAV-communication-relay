@@ -1,2 +1,0 @@
-uav_control
--DCATKIN_DEVEL_PREFIX=/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/devel -DCMAKE_INSTALL_PREFIX=/home/yifan/git/UAV-communication-relay/UAV_Mission_Control_Program/uav/install -G Unix Makefiles

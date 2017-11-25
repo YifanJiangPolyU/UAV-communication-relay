@@ -99,7 +99,7 @@ const uint32_t poly8_lookup[256] =
 uint32_t crc32_byte(uint8_t *p, uint16_t bytelength);
 
 /**
- * @brief A separate thread to receive 
+ * @brief A separate thread to receive
  */
 void * SerialBuffering(void * param);
 
@@ -143,7 +143,7 @@ int main(int argc, char **argv)
   //ROS_INFO("num: %d, param: %s", argc, argv[0]);
 
   /**
-   * Initialize UART port 
+   * Initialize UART port
    */
   int uart_handle1 = -1;
   struct termios options;
@@ -152,8 +152,8 @@ int main(int argc, char **argv)
   options.c_cflag = B57600 | CS8 | CLOCAL | CREAD;  //<Set baud rate
   options.c_iflag = IGNPAR;
   options.c_oflag = 0;
-  options.c_lflag = 0;	
-  options.c_cc[VMIN] = 0;     // minimum char packing 
+  options.c_lflag = 0;
+  options.c_cc[VMIN] = 0;     // minimum char packing
   options.c_cc[VTIME] = 100;  // read timeout: 10s
   tcflush(uart_handle1, TCIFLUSH);
   tcsetattr(uart_handle1, TCSANOW, &options);
@@ -169,7 +169,7 @@ int main(int argc, char **argv)
    * Create a service for sending data over datalink, on specified channel
    */
   ros::ServiceServer service = n.advertiseService("datalink_send_ch1", send);
-  
+
   /**
    * Create a ROS publisher that publishes datalink frames received
    */
@@ -179,14 +179,14 @@ int main(int argc, char **argv)
    * Publishes statistics of msgs over this channel
    */
   stat_publisher = n.advertise<uav_control::channel_stat>("uav_control/datalink_stat_ch1", 15);
- 
+
   pthread_t ch1_decoding_thread;
   pthread_create( &ch1_decoding_thread, NULL, &SerialBuffering, (void*)(NULL));
 
   /**
    * Main loop that reads and decodes datalink frames
    */
-  ros::MultiThreadedSpinner spinner(2); 
+  ros::MultiThreadedSpinner spinner(2);
   while (ros::ok()){
     spinner.spin();
   }// end of while loop
@@ -200,7 +200,7 @@ int main(int argc, char **argv)
 
 
 /**
- * A separate thread to receive 
+ * A separate thread to receive
  */
 void * SerialBuffering(void * param)
 {
@@ -252,7 +252,7 @@ void * SerialBuffering(void * param)
 		}
 		else if(state == state_starting){
 			if(tmp == starting_mark){
-				/* have found a new frame */  
+				/* have found a new frame */
 				state = state_addr;
 			}
 			else{
@@ -299,7 +299,7 @@ void * SerialBuffering(void * param)
 					state = state_payload;
 				}
 			}
-		}	
+		}
 		else if(state == state_payload){
 			msg->payload[i] = tmp;
 			i += 1;
@@ -315,11 +315,11 @@ void * SerialBuffering(void * param)
 			/* collecting CRC bytes */
 			CRC_received |= ((uint16_t)tmp)<<((3-CRCCnt)*8);
 			CRCCnt += 1;
-			
+
 			if(CRCCnt == 4){
 				crcval = crc32_byte(&(msg->payload[0]), PayloadLen);
-				
-				
+
+
 				if(CRC_received == crcval){
 					/* if CRC passes, accept message */
 					//ROS_WARN("accepting message, publishing");
@@ -377,7 +377,7 @@ bool send(uav_control::datalink_send::Request  &req,
   tmp_buff[5] = (uint8_t)(req.len & 0x00FF);
 
   /* payload */
-  for(i=0; i<req.len; i++){ 
+  for(i=0; i<req.len; i++){
     tmp_buff[i+6] = req.payload[i];
   }
 
@@ -390,7 +390,7 @@ bool send(uav_control::datalink_send::Request  &req,
 
   /* send datalink frame */
   int count = write(writeFd, tmp_buff, req.len+10);
-  
+
   if (count < 0){
     res.err = 3;
     return true;
