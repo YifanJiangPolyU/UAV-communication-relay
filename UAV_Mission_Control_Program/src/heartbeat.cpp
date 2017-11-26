@@ -17,6 +17,7 @@
 
 #include <uav_control/DFrame.h>
 #include <uav_control/datalink_send.h>
+#include <sysid.h>
 
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
@@ -25,7 +26,7 @@
 #include <mavros_msgs/Mavlink.h>
 
 
-const uint8_t sysid = 0x03;
+const uint8_t SYSID = 0x03;
 
 int main(int argc, char **argv)
 {
