@@ -26,7 +26,7 @@
 #include <mavros_msgs/Mavlink.h>
 
 
-const uint8_t SYSID = 0x03;
+const uint8_t sysid = SYSID;
 
 int main(int argc, char **argv)
 {
